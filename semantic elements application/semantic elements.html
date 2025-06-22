@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic elements</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+        }
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+        .header img{
+            width: 60px;
+            height: auto;
+            margin-left: 10px;
+        }
+        .search-form{
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 999px;
+            padding: 8px 16px;
+            width: 500px;
+            position: relative;
+            justify-content: space-between;
+            margin-left: 50px;
+            margin-right: 50px;
+
+        }
+        .search-form input{
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+        }
+        .search-icon{
+            margin-right: 10px;
+            font-size: 18px;
+            color: grey;
+        }
+        .nav{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+            padding: 0;
+            margin: 0;
+        }
+        .nav a{
+            padding: 10px 20px;
+            font-weight: bold;
+            justify-content: space-between;
+        }
+        .login-button{
+            border: 1px solid #a435f0;
+            color: #a435f0;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 5px;
+            transition: background 0.2s;
+            margin-right: 10px;
+    
+        }
+        .login-button:hover{
+            background-color: #f3e9fd;
+        }
+        #about{
+            justify-content: space-between;
+            margin-top: 20px;
+            
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+        #about h1{
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        #about h2{
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        #about p{
+            font-size: 18px;
+            line-height: 1.8;
+            letter-spacing: 1.5px;
+            text-align: justify;
+            margin-bottom: 5px;
+            
+        }
+        #about ul{
+            margin-left: 30px;
+            margin-bottom: 10px;
+            margin-top: 5px;
+        }
+        #about ul li{
+            list-style-type: square;
+            font-size: 18px;
+            line-height: 1.5;
+            letter-spacing: 1.5px;
+        }
+        #courses{
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 20px;
+            justify-content: space-between;
+        }
+        .intro-course{
+            display: flex;
+            flex-direction: row;
+            align-items:normal;
+            justify-content: space-between;
+        }
+        h1{
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .intro-course img{
+            height: 25%;
+            width: 25%;
+            border-radius: 5px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        .intro-course p{
+            font-size: 20px;
+            line-height: 1.8;
+            text-align: justify;
+            letter-spacing: 1.5px;
+            margin-right: 100px;
+            margin-left: 25px;
+            padding: 2;
+            margin-top: 20px;
+        }
+        .featured-courses{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 10px;
+
+        }
+        .fullstack{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .featured-courses h3{
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        .featured-courses img{
+            height: 200px;
+            width: 90%;
+            margin-left: 20px;
+            margin-right: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .featured-courses p{
+            margin-left: 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            letter-spacing: 0.2px;
+            
+        }
+        .featured-courses li{
+            margin-left: 35px;
+            margin-bottom: 3px;
+            line-height: 1.5;
+            letter-spacing: 0.2px;
+        }
+        .dsa{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .machinelearning{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .competitiveprogramming{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .dbms{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .cybersecurity{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        #tutorials{
+            align-items:normal;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 20px;
+            justify-content: space-between;
+        }
+        #tutorials h1{
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            line-height: 1.5;
+            margin-left: 25px;
+        }
+        .tutorials-info p{
+            font-size: 20px;
+            line-height: 1.8;
+            text-align: justify;
+            letter-spacing: 0.8px;
+            margin-right: 100px;
+            margin-left: 25px;
+            margin-bottom: 10px;
+        }
+        .featured-tutorials{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 10px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        .html-css{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .featured-tutorials h3{
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        .featured-tutorials p{
+            margin-left: 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            letter-spacing: 0.2px;
+            
+        }
+        .featured-tutorials iframe{
+            height: 200px;
+            width: 90%;
+            margin-left: 20px;
+            margin-right: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .featured-tutorials li{
+            margin-left: 35px;
+            margin-bottom: 5px;
+            line-height: 1.5;
+            letter-spacing: 0.2px;
+        }
+        .javascript-basic{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .python-for-beginners{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .cpp{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .react{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .sql{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        #articles{
+            align-items:normal;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 20px;
+            justify-content: space-between;
+        }
+        .articles-info {
+            display: flex;
+            flex-direction: column;
+            align-items:normal;
+            justify-content: space-between;
+        }
+        .articles-info h1{
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            line-height: 1.5;
+            margin-left: 25px;
+        }
+        .articles-info p{
+            font-size: 20px;
+            line-height: 1.8;
+            text-align: justify;
+            letter-spacing: 0.8px;
+            margin-right: 100px;
+            margin-left: 25px;
+            margin-bottom: 10px;
+        }
+        .featured-articles{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 10px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        .problem-solving-article{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .featured-articles h3{
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 1.5;
+        }
+        .featured-articles p{
+             margin-left: 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            letter-spacing: 0.2px;
+
+        }
+        .featured-articles img{
+            height: 200px;
+            width: 90%;
+            margin-left: 20px;
+            margin-right: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .featured-articles li{
+            margin-left: 35px;
+            margin-bottom: 5px;
+            line-height: 1.5;
+            letter-spacing: 0.2px;
+            
+        }
+        .ai{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .portfolio{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .understanding-cyber-security{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .blockchain{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .continuous-learning{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        #contact{
+            align-items:normal;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 20px;
+            justify-content: space-between;
+        }
+        #contact h1{
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            line-height: 1.5;
+            margin-left: 25px;
+            margin-top: 20px;
+        }
+        .get-in-touch{
+            display: flex;
+            flex-direction: column;
+            align-items:normal;
+            justify-content: space-between;
+        }
+        .get-in-touch h2{
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            line-height: 1.5;
+            margin-left: 25px;
+        }
+        .get-in-touch p{
+            font-size: 20px;
+            line-height: 1;
+            text-align: justify;
+            letter-spacing: 0.2px;
+            margin-left: 25px;
+            margin-bottom: 8px;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+            color: #333;
+        
+        }
+        .contact-form form>div{
+            margin-bottom: 20px;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form select,
+        .contact-form textarea{
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        .contact-form button[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 14px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 600px){
+            .contact-form{
+                padding: 20px;
+            }
+        }
+
+        .footer {
+  background-color: #1a1a1a;
+  color: #f2f2f2;
+  padding: 30px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h3, .footer-section h4 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #cccccc;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+
+        
+
+
+        
+        
+
+    </style>
+</head>
+<body>
+    
+    
+    <header class="header">
+        <img src="gfg_logo.png" alt="gfg logo" />
+        <form class="search-form">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="Search for anything" />
+        </form>
+        <nav class="nav">
+            <a href="#home">Home</a> |
+            <a href="#about">About</a> |
+            <a href="#courses">Courses</a> |
+            <a href="#tutorials">Tutorials</a> |
+            <a href="#articles">Article</a> |
+            <a href="#contact">Contact</a> |
+            
+        </nav>
+        <a href="#login" class="login-button">Login</a>
+        <a href="#register" class="login-button">Register</a>
+        
+    </header>
+    
+    <hr>
+    <main>
+    <section id="about">
+        <article>
+            <h1>About GeeksForGeeks</h1>
+            <p><strong>GeeksforGeeks (GFG)</strong> is a leading online platform dedicated to computer science and programming education. It was founded in 2009 by <strong>Sandeep Jain</strong>, an alumnus of IIT Roorkee.</p>
+
+            <h2>What GFG Offers:</h2>
+            <ul>
+                <li>In-depth tutorials on Data Structures, Algorithms, DBMS, OS, and more.</li>
+                <li>Practice problems to improve coding and problem-solving skills.</li>
+                <li>Expert-designed courses for students and professionals.</li>
+                <li>Interview preparation resources with real-world company questions.</li>
+                <li>Regular coding contests and challenges.</li>
+                <li>Technical blogs and articles by the developer community.</li>
+            </ul>
+            <h2>Mission:</h2>
+            <p>To make quality computer science education accessible and effective for all learners across the globe.</p>
+            <h2>Community:</h2>
+            <p>GeeksforGeeks has built a strong and growing global community of students, educators, and professionals who learn, code, and share together.</p>
+        </article>
+    </section>
+
+    <section id="courses">
+        <article>
+            <h1>Geeks For Geeks Courses</h1>
+            <div class="intro-course">
+                
+                <img src="gfgcourse.png" alt="gfg course">
+                <p>Whether you're a complete beginner or looking to sharpen your skills, our diverse range of tech courses is designed to help you grow confidently. Each course is created by industry professionals and educators with hands-on projects, real-world scenarios, and comprehensive assessments to ensure deep understanding and practical application.</p>
+            </div>
+            <div class="featured-courses">
+                <div class="fullstack">
+                <h3>Full Stack Web Development</h3>
+                <img src="FullStack-salar.png" alt="fullstackdev" height="200px" weight="200px">
+                
+                <p>Dive into the complete lifecycle of web application development. This course covers front-end and back-end technologies including HTML5, CSS3, JavaScript, React, Node.js, Express, and MongoDB. By the end, you'll build fully functional web applications from scratch.</p>
+                <p><strong>Course Description:</strong></p>
+                <ul>
+                    <li>Skill Level: Beginner to Advanced</li>
+                    <li>Duration: 60+ Hours</li>
+                    <li>Certificate: Yes</li>
+                    <li>Rating: 4.7/5</li>
+
+                </ul>
+                </div>
+                <div class="dsa">
+                    <h3>Data Structures & Algorithms(DSA)</h3>
+                    <img src="dsa.webp" alt="dsa" height="200px" weight="200px">
+                    
+                    <p>Master DSA using languages like C++, Java, or Python. This course is focused on problem-solving, algorithmic thinking, and coding efficiency — ideal for competitive programming and interview preparation.</p>
+                    <p><strong> Course Description: </strong></p>
+                    <ul>
+                        <li>Skill Level: Intermediate</li>
+                        <li>Duration: 45+ Hours</li>
+                        <li>Includes: Practice Problems, quizzes, mock tests</li>
+                        <li>Rating: 4.8/5</li>
+                    </ul>
+                </div>
+                <div class="machinelearning">
+                    <h3>Machine Learning with Python</h3>
+                    <img src="th.jpg" alt="machinelearning" height="200px" weight="200px">
+                    
+                    <p>Understand the fundamentals of machine learning, from linear regression to neural networks. You’ll learn how to preprocess data, build models using scikit-learn, and evaluate their performance through real-world projects.</p>
+                    <p><strong> Course Description:</strong></p>
+                    <ul>
+                        <li>Skill Level: Intermediate to Advanced</li>
+                        <li> Duration: 50+ Hours</li>
+                        <li>Projects: Spam classifier, housing price predictor</li>
+                        <li>Rating: 4.6/5</li>
+                    </ul>
+                </div>
+                <div class="competitiveprogramming">
+                    <h3>Competitive Programming</h3>
+                    <img src="competitive programming.png" alt="competitive programming" height="200px" weight="200px">
+                    
+                    <p>Designed for those who love challenges, this course offers deep dives into time complexity, recursion, dynamic programming, graphs, and more. Ideal for preparing for online contests and coding interviews.</p>
+                    <p><strong> Course Description:</strong></p>
+                    <ul>
+                        <li>Skill Level: Intermediate</li>
+                        <li>Duration: 30+ Hours</li>
+                        <li>Includes: Live contests, leaderboard tracking</li>
+                        <li>Rating: 4.9/5</li>
+                    </ul>
+                </div>
+                <div class="dbms">
+                    <h3>Database Management Systems (DBMS)</h3>
+                    <img src="dbms.png" alt="dbms" height="200px" weight="200px">
+                    
+                    <p>Learn everything about relational databases, SQL queries, ER models, normalization, indexing, and transaction management. A must-have for backend developers and computer science students.</p>
+                    <p><strong> Course Description:</strong></p>
+                    <ul>
+                        <li>Skill Level: Beginner to Intermediate</li>
+                        <li>Duration: 20+ Hours</li>
+                        <li>Hands-on: SQL labs and mini-projects</li>
+                        <li>Rating: 4.5/5</li>
+                    </ul>
+                </div>
+                <div class="cybersecurity">
+                    <h3>Cyber Security Fundamentals</h3>
+                    <img src="cybersecurity.jpg" alt="cybersecurity" height="200px" weight="200px">
+                    
+                    <p>A beginner-friendly course introducing concepts of cybersecurity, ethical hacking, digital forensics, and basic cryptography. Learn how to safeguard systems, detect vulnerabilities, and protect sensitive data.</p>
+                    <p><strong> Course Description:</strong></p>
+                    <ul>
+                        <li>Skill Level: Beginner</li>
+                        <li>Duration: 25+ Hours</li>
+                        <li>Includes: Virtual labs, case studies</li>
+                        <li>Rating: 4.7/5</li>
+                    </ul>
+                    
+                </div>
+                
+            </div>
+        </article>
+
+    </section>
+
+    <section id="tutorials">
+        <article>
+            <div class="tutorials-info">
+            <h1>Step-by-Step Tutorials to Master key Concepts</h1>
+            <p>Our tutorials are crafted to help learners build strong foundations in computer science, programming, and web development. Whether you're a beginner learning syntax or an experienced coder brushing up on advanced topics, our tutorials are structured, easy to follow, and rich with examples and exercises.</p>
+            </div>
+            <div class="featured-tutorials">
+                <div class="html-css">
+                    <h3>HTML&CSS</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/a_iQb1lnAEQ?si=DwNfo4-9ORJN0WeB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>Learn the foundation of web development. Structure webpages with HTML and style them using CSS. Covers text formatting, layout techniques like Flexbox and Grid, and responsive design to make your sites look great on all devices.</p>
+                    <p><strong>Tutorial Description:</strong></p>
+                    <ul>
+                        <li>Covers: HTML5 elements, semantic tags, CSS selectors, Box Model, positioning, Flexbox, Grid.</li>
+                        <li>Outcome: Create your own responsive web pages.</li>
+                    </ul>
+                </div>
+                <div class="javascript-basic">
+                    <h3>JavaScript Basic</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xc3a_CJhjCc?si=qEIyMj3DqedvNtrg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>Make your websites interactive! This course covers variables, functions, loops, conditionals, and DOM manipulation. You’ll also learn how to handle user events and build simple dynamic web pages.</p>
+                    <p><strong>Tutorial Description:</strong></p>
+                    <ul>
+                        <li>Covers: Variables, data types, conditionals, functions, loops, events, DOM.</li>
+                        <li>Outcome: Build dynamic web features like forms, sliders, and dropdowns.</li>
+                    </ul>
+                </div>
+                <div class="python-for-beginners">
+                    <h3>Python For Beginners</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rfscVS0vtbw?si=uefdXFJqITMl7dA5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>A beginner-friendly introduction to programming with Python. Covers basic syntax, control flow, functions, and file handling. Ideal for new coders or those switching from another language.</p>
+                    <p><strong>Tutorial Description:</strong></p>
+                    <ul>
+                        <li>Covers: Syntax, variables, data types, loops, functions, and basic file handling.</li>
+                        <li>Outcome: Build simple projects like calculators and number guessers.</li>
+                    </ul>
+                </div>
+                <div class="cpp">
+                    <h3>C++ Programming</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vLnPwxZdW4Y?si=5MLbyjZ9zhb2o7lf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>Start with syntax and progress to arrays, pointers, and object-oriented programming. Great for students preparing for exams, interviews, or competitive coding.</p>
+                    <p><strong>Tutorial Description:</strong></p>
+                    <ul>
+                        <li>Covers: Data types, control statements, arrays, functions, pointers, classes, and objects.</li>
+                        <li>Outcome: Solve coding problems and understand backend logic building.</li>
+                    </ul>
+                </div>
+                <div class="react">
+                    <h3>React.js Crash Course</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DLX62G4lc44?si=w-px6Bwpav3mFzWX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>Learn to build modern web apps with React. Understand components, state, props, hooks, and routing — perfect for students moving into advanced frontend development.</p>
+                    <p><strong>Tutorials Description:</strong></p>
+                    <ul>
+                        <li>Learn how to build modern, fast, and scalable frontend apps using React. Perfect for students looking to get into front-end development.</li>
+                        <li>Outcome: Create a mini project like a To-Do app or portfolio.</li>
+                    </ul>
+                </div>
+                <div class="sql">
+                    <h3>SQL & Databases</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/HXV3zeQKqGY?si=WWKAmN6wVD0ZS9EF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>Master the basics of data management. Learn to write SQL queries, use joins, and work with relational databases — a must-have for backend and data roles.</p>
+                    <p><strong>Tutorials Description:</strong></p>
+                    <ul>
+                        <li>Covers: SELECT, INSERT, UPDATE, DELETE, JOIN, GROUP BY, constraints.</li>
+                        <li>Outcome: Query relational databases efficiently.</li>
+                    </ul>
+
+                </div>
+            </div>
+        </article>
+
+    </section>
+    
+    <section id="articles">
+        <article>
+            <div class="articles-info">
+                <h1>In-Depth Articles for Knowledge Enhancement</h1>
+                <p>Stay updated with the latest trends, insights, and thought-provoking discussions on technology, coding, and education. Our articles cover a wide range of topics — from beginner tips to advanced techniques, and from tech industry news to personal development advice. Perfect for anyone looking to deepen their knowledge or gain a new perspective.</p>
+            </div>
+            <div class="featured-articles">
+                <div class="problem-solving-article">
+                    <h3>The Importance of Problem-Solving in Programming</h3>
+                    <img src="programming-of-problem-solving.jpg" alt="problem solving in programming">
+                    <p>A deep dive into how problem-solving shapes a good programmer. This article explores different strategies for improving coding skills, understanding algorithmic thinking, and tackling problems effectively in coding interviews and real-world applications.</p>
+                    <ul>
+                        <li>Key Takeaways: Break down problems, think step-by-step, practice coding challenges.</li>
+                        <li>Who Should Read: Beginners, Coding Interview Prep, Software Engineers.</li>
+                    </ul>
+                </div>
+                <div class="ai">
+                    <h3>The Rise of AI in Software Development</h3>
+                    <img src="rise-of-ai.jpg" alt="rise of ai">
+                    <p>Artificial Intelligence is transforming the way we develop software. This article discusses the current role of AI in software engineering, from automating repetitive tasks to helping build smarter, more efficient applications.</p>
+                    <ul>
+                        <li>Key Takeaways: Tools powered by AI, job implications, future potential.</li>
+                        <li>
+                            Who Should Read: Developers, Data Scientists, AI enthusiasts.
+                        </li>
+                    </ul>
+                </div>
+                <div class="portfolio">
+                    <h3>How to Build a Portfolio as a Developer</h3>
+                    <img src="Build-Your-Portfolio.png" alt="build a Portfolio">
+                    <p>Learn how to create a strong developer portfolio that stands out to recruiters. This article provides actionable tips on what to include, how to showcase your projects, and how to impress with your GitHub and personal website.</p>
+                    <ul>
+                        <li>Key Takeaways: What projects to feature, tools to use, how to highlight your skills.</li>
+                        <li>Who Should Read: Junior Developers, Career Switchers, Job Seekers.</li>
+                    </ul>
+                </div>
+                <div class="understanding-cyber-security">
+                    <h3>Understanding the Basics of Cybersecurity for Developers</h3>
+                    <img src="cybersecurityarticle.jpg" alt="understanding cyber security">
+                    <p>As a developer, security is key. This article introduces you to essential cybersecurity practices every developer should follow, including secure coding techniques, encryption methods, and vulnerability management.</p>
+                    <ul>
+                        <li>Key Takeaways: Best practices for secure coding, common pitfalls, ethical hacking.</li>
+                        <li>Who Should Read: Developers, Security Engineers, IT Professionals.</li>
+                    </ul>
+                </div>
+                <div class="blockchain">
+                    <h3>The Future of Blockchain Technology</h3>
+                    <img src="The_Future_of_Blockchain_Technology.webp" alt="blockchain">
+                    <p>This article explores blockchain beyond cryptocurrency — looking at its potential in various industries, from finance and healthcare to supply chain and voting systems.</p>
+                    <ul>
+                        <li>
+                            Key Takeaways: Blockchain use cases, challenges, and future trends.
+                        </li>
+                        <li>Who Should Read: Tech Enthusiasts, Entrepreneurs, Software Engineers.</li>
+                    </ul>
+                </div>
+                <div class="continuous-learning">
+                    <h3>Why Continuous Learning is Essential for Developers</h3>
+                    <img src="continuous learning.jpg" alt="continuous learning">
+                    <p>In this article, we highlight the importance of lifelong learning for software developers. From keeping up with emerging technologies to honing soft skills, this guide emphasizes the need to stay curious and adaptable.</p>
+                    <ul>
+                        <li>Key Takeaways: Online resources, building good habits, networking with other developers.</li>
+                        <li>Who Should Read: Developers, Students, Career Growth Seekers.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section id="contact">
+        <article>
+            <h1>Have Questions? We'd Love to Hear from You!</h1>
+            <div class="get-in-touch">
+                <h2>Contact Information:</h2>
+                <p>Email: support@gfgclone.com</p>
+                <p>Phone: +91-98765-43210</p>
+                <p>Office Hours: Monday to Friday, 9:00 AM - 6:00 PM IST</p>
+                <p>Address: 123 Learning Avenue, New Delhi, India- 110001</p>
+            </div>
+            <div class="contact-form">
+                <h2>Contact Form</h2>
+                <form>
+                    <div class="personal-info">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your First Name"/>
+                    
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname" placeholder="Enter your Last Name"/>
+                  </div>
+                  <div class="email-address">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email"/>
+                  </div>
+                  <div class="subject">
+                    <label for="subject1">Subject</label>
+                    <select id="subject1" name="subject1">
+                        <option value="html">HTML & CSS</option>
+                        <option value="js">JavaScript Basics</option>
+                        <option value="python">Python for Beginners</option>
+                        <option value="cpp">C++ Programming</option>
+                        <option value="react">React.js Crash Course</option>
+                         <option value="sql">SQL & Databases</option>
+
+                    </select>
+                  </div>
+                  <div class="message">
+                    <label for="msg">Your Message</label>
+                    <textarea id="msg" name="msg" rows="5" cols="50" ></textarea>
+                  </div>
+                  <button type="submit">Submit</button>
+
+                </form>
+            </div>
+        </article>
+    </section>
+    </main>
+
+   <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section about">
+      <h3>GFG Clone</h3>
+      <p>Empowering learners with practical tutorials, structured courses, and hands-on coding knowledge.</p>
+      <p>© 2025 GFG Clone. All rights reserved.</p>
+    </div>
+
+    <div class="footer-section links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#tutorials">Tutorials</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact">
+      <h4>Contact Us</h4>
+      <p>Email: support@gfgclone.com</p>
+      <p>Phone: +91-98765-43210</p>
+    </div>
+  </div>
+</footer>
+
+
+    
+</body>
+</html>
